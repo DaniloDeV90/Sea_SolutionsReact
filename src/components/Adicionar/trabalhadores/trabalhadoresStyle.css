@@ -1,0 +1,24 @@
+.confirmarUpdate {
+background: #C4C4C4;
+border-radius: 10px;
+border: 1px solid black;
+padding: 20px;
+}
+.formUpdate {
+    display: flex ;
+    flex-direction: column;
+
+    
+}
+.Adicionar_Cancelar {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+}
+.Adicionar_Cancelar > span {
+    background: #4A4A4A;
+    padding: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}

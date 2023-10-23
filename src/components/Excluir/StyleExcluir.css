@@ -1,0 +1,95 @@
+
+
+.Excluir {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+    height: 350px;
+
+}
+
+
+.ButtonDeletarSetor {
+    background: #4A4A4A;
+    padding: 10px;
+   color:  #FFFFFF;
+   cursor: pointer;
+}
+
+
+.dadosTrabalhadores {
+    display: flex;
+    flex-direction: column;
+}
+
+.Cargos_Trabalhadores {
+    display: flex;
+
+    background: #A09F9F;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.opcoes {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.spanExclusao {
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.spanEdit {
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24,
+
+}
+
+.confirmarExclusaoContainer {
+    background-color: transparent;
+    height: 100vh;
+    width: 100%;
+
+  
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+
+
+}
+.confirmarExclusao {
+    background-color:  #C4C4C4;;
+    padding: 20px;
+    border-radius: 10px;
+
+
+}
+
+.exclusaoOpcoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.exclusaoOpcoes > span {
+    background: #4A4A4A;
+    padding: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}

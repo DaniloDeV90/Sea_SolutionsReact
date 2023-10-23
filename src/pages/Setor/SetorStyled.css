@@ -1,0 +1,226 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.titleSetor {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.SetorLogo {
+    display: flex;
+    width: 127px;
+    padding: 26px 33px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+
+    margin-bottom: 40px;
+    background: #C4C4C4;
+}
+
+
+
+.SetorController {
+
+    display: grid;
+    grid-template-areas: "Setores";
+    grid-template-columns: 0.4fr 1fr;
+    gap: 10px;
+
+}
+
+
+.TItulo {
+    margin-bottom: 10px;
+}
+
+.Setores {
+    background-color: #C4C4C4;
+    ;
+
+
+
+    padding: 20px;
+}
+
+.VerSetores {
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ListaDeSetores {
+    overflow: auto;
+    height: 400px;
+}
+
+.NomeSetor {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.TodosOsSetores {
+    display: none;
+
+
+}
+
+.SetoresSalvos,
+.botoesControllerSetor {
+    display: flex;
+
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+
+
+
+}
+
+.tituloSetor {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.SetoresSalvos>span,
+.botoesControllerSetor>span {
+    background-color: #C4C4C4;
+    ;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+
+
+
+}
+
+.botoesControllerSetor>span {
+    cursor: pointer;
+}
+
+.Form {
+    background-color: #C4C4C4;
+    padding: 20px;
+    padding-right: 60px;
+    border: 1px solid red;
+
+
+}
+
+form {
+    height: 50vh;
+}
+
+.titleSetor {
+    margin-bottom: 20px;
+}
+
+.addCargo {
+    display: flex;
+    align-items: center;
+
+}
+
+input {
+    height: 35px;
+    border: none;
+    font-size: 20px;
+    background: #817F7F;
+}
+
+.FormNome {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.addCargo {
+    margin-top: 20px;
+}
+
+.inputAdd {
+    width: 100%;
+
+}
+
+.botaoAddCargos {
+    color: #FFF;
+    margin-left: 10px;
+    background: #4A4A4A;
+    height: 35px;
+    display: flex;
+    padding-left: 20px;
+    cursor: pointer;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.SalvarSetor {
+    display: flex;
+
+    justify-content: end;
+
+
+
+}
+
+.ButtonSalvar {
+    color: #FFF;
+    margin-left: 10px;
+    background: #4A4A4A;
+    height: 35px;
+    display: flex;
+    width: 100px;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.cargosAdicionados {
+    margin-top: 19px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cargos {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    background-color: aliceblue;
+    padding: 5px;
+}
+
+.spancargos {
+    font-size: 12px;
+
+}
+
+
+.se_tor {
+    background: #A09F9F;
+
+}
