@@ -2,6 +2,6 @@
 
 para iniciar o projeto
 
-npm i
-npm cd Sea_Challenge
-npm run dev
+npm i \n
+npm cd Sea_Challenge \n
+npm run dev \n
