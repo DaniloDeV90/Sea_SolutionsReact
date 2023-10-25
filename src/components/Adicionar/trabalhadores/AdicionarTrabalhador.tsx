@@ -6,6 +6,7 @@ import { TrabalhadorContext } from "../../../context/TrabalhadorContext"
 import "./trabalhadoresStyle.css"
 import { CreateTrabalhador } from "../../../api/trabalhador/CreateTrabalhador"
 import LoadingForm from "../../loadings/loadingForm"
+import { TSetores } from "../../../interfaces/allSetores"
 const AdicionarTrabalhador = () => {
     const cardUpdate = useContext(OpcaoUpdateContext)
     const trabalhador = useContext(TrabalhadorContext)
@@ -70,9 +71,15 @@ const erroInputCPFContext = erroInputCPF.textContent as string
         const nome = inputNome.current?.value
         const cpf = inputCPF.current?.value
         setLoading(false)
-        await CreateTrabalhador(nome as string, trabalhador?.setor?.cargo as string, trabalhador?.nomeSetor as string, cpf as string)
+       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+       const trabalhadores:TSetores =   await CreateTrabalhador(nome as string, trabalhador?.setor?.cargo as string, trabalhador?.nomeSetor as string, cpf as string)
+   
+
+       console.log (trabalhadores.nomeSetor)
         setLoading(true)
-        window.location.reload()
+
+     if (trabalhadores.nomeSetor)   window.location.reload ()
+     else erroInputCPF.innerHTML  = "Este CPF já está cadastrado!!"
 
 
 

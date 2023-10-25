@@ -86,9 +86,7 @@ const Excluir = ({ dados }: MeuComponenteProps) => {
 
 
             </form>
-            <div className="SalvarSetor">
-                <span className="ButtonSalvar"  >Salvar</span>
-            </div>
+       
 
         </div>
     )

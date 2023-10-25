@@ -224,14 +224,3 @@ input {
     background: #A09F9F;
 
 }
-
-@media (max-width: 584px) {
-    .SetorController {
-
-      
-        grid-template-areas: "Setores";
-        grid-template-columns: 0.4fr 1fr;
-        gap: 10px;
-    
-    }
-}
