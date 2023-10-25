@@ -46,7 +46,8 @@ const Editar = ({ dados }: MeuComponenteProps) => {
         const cargo = inputEditCargo.current as HTMLInputElement
 
 
-        if (erroContent.length > 0) return
+        if (cargo.value.length === 0) return null
+        if (erroContent.length > 0) return null
 
 
         if (cargo.value.length >= 11) {

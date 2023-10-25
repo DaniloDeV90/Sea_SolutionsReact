@@ -28,9 +28,10 @@ const AdicionarTrabalhador = () => {
             const ElementEvent = ev.target as HTMLInputElement;
             const erroNome = document.querySelector("#erroInputCPF") as HTMLSpanElement
 
+            const cpf = ElementEvent.value.replace (/\D/g,'')
             const regex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
 
-            if (regex.test(ElementEvent.value)) {
+            if (regex.test(ElementEvent.value) || cpf.length !== 11) {
 
                 erroNome.innerHTML = ""
 
