@@ -1,5 +1,5 @@
-import React, { useState, useContext, createContext, ReactNode } from 'react';
-import { TSetores } from '../interfaces/allSetores';
+import  { useState, createContext } from 'react';
+
 import { Tcargos } from '../interfaces/Cargos';
 import { propsType } from '../interfaces/contextChildrenTypes';
 

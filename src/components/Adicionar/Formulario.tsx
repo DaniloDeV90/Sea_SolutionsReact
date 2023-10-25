@@ -22,10 +22,11 @@ const Formulario = () => {
     const nomeSetor = useRef<HTMLInputElement>(null)
     const inputCargo = useRef<HTMLInputElement>(null)
 
-    const handleSubmit = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+    const handleSubmit = () => {
 
         const input = inputCargo.current as HTMLInputElement;
 
+        if (input.value.length === 0) return null
         const erro = document.querySelector("#ErrosCargos") as HTMLSpanElement
 
         const CargoErroContent = erro.textContent as string
@@ -129,7 +130,7 @@ const  inputCargoAdd = inputCargo.current as HTMLInputElement
                 <label htmlFor="" className='cargoLabel' >Cargo(s)</label>
                 <div className="addCargo">
                     <input type="text" className='inputAdd' ref={inputCargo} />
-                    <span className="botaoAddCargos" onClick={e => handleSubmit(e)} >Adicionar</span>
+                    <span className="botaoAddCargos" onClick={ handleSubmit} >Adicionar</span>
                 </div>
 
                 <span id="ErrosCargos"></span>

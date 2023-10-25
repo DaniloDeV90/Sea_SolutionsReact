@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import React, { useContext, useState, useEffect } from 'react'
+import  { useContext, useState, useEffect } from 'react'
 import { OpcaoDeleteContext } from '../../context/ContextBotaoExcluir'
 
 import { CargosContext } from '../../context/ContextTrabalhoCargo'
 import { DeleteCargo } from '../../api/cargo/DeleteCargo'
 import { DeleteSetor } from '../../api/Setor/DeleteSetor'
+import LoadingForm from '../loadings/loadingForm'
 
 
 
@@ -12,7 +13,7 @@ import { DeleteSetor } from '../../api/Setor/DeleteSetor'
 const CardExclusao = () => {
     const cardDeExclusao = useContext(OpcaoDeleteContext)
     const cargos = useContext(CargosContext)
-
+    const [loading, setLoading] = useState(true)
 
     const [mostrar, setMostrar] = useState({ display: "none" })
 
@@ -33,6 +34,7 @@ const CardExclusao = () => {
         const nomeCargo = cargos?.cargos?.cargo as string
         const setorCargo = cargos?.setores as string
 
+        setLoading (false)
         if ( setorCargo && !nomeCargo) await DeleteSetor(setorCargo)
         console.log (nomeCargo, setorCargo)
         if (nomeCargo && setorCargo) await DeleteCargo(nomeCargo, setorCargo)
@@ -40,6 +42,7 @@ const CardExclusao = () => {
    
 
         cardDeExclusao?.toggleValor("none")
+        setLoading (true)
         window.location.reload()
 
 
@@ -57,8 +60,8 @@ const CardExclusao = () => {
 
                 <div className="exclusaoOpcoes">
                 
-                    <span onClick={ExcluirDados}>Sim</span>
-                    <span onClick={naoExclusao}>Não</span>
+                 {loading ?   <> <span onClick={ExcluirDados}>Sim</span>
+                    <span onClick={naoExclusao}>Não</span>  </>: <LoadingForm/>}
                 </div>
             </div>
 

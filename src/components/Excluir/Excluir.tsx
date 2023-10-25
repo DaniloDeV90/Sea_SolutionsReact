@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import  { useContext } from 'react'
 import { MeuComponenteProps } from '../Editar/Editar'
 import "./StyleExcluir.css"
 import ExcluirSVG from '../svgs/Excluir'
@@ -20,7 +20,7 @@ const Excluir = ({ dados }: MeuComponenteProps) => {
 
 
 
-    const handleExclude = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, dados: Tcargos, nomeSetor: string) => {
+    const handleExclude = ( dados: Tcargos, nomeSetor: string) => {
 
         cardDeExclusao?.toggleValor("flex")
 
@@ -34,7 +34,7 @@ const Excluir = ({ dados }: MeuComponenteProps) => {
         
     }
 
-    const adicionarTrabalhador = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, dadoss: Tcargos) => {
+    const adicionarTrabalhador = ( dadoss: Tcargos) => {
 
         cardDeUpdate?.toggleValor ("flex");
         trabalhador?.addSetor(dadoss)
@@ -64,14 +64,14 @@ const Excluir = ({ dados }: MeuComponenteProps) => {
                                     <span>{ev.trabalhador ? "CPF: " + ev.trabalhador.cpf : ""}</span>
                                 </div>
                                 <div className="opcoes">
-                                    <span title='excluir cargo' className='spanExclusao' onClick={e => handleExclude(e, ev, dados.nomeSetor)}>
+                                    <span title='excluir cargo' className='spanExclusao' onClick={ () => handleExclude( ev, dados.nomeSetor)}>
                                         <ExcluirSVG />
                                     </span>
 
 
 
 
-                                    {!ev.trabalhador ? <span title="adicionar trabalhadores" className="material-symbols-outlined  spanEdit" onClick={e => adicionarTrabalhador(e, ev)} >
+                                    {!ev.trabalhador ? <span title="adicionar trabalhadores" className="material-symbols-outlined  spanEdit" onClick={() => adicionarTrabalhador( ev)} >
                                         edit
                                     </span> : null}
                                 </div>

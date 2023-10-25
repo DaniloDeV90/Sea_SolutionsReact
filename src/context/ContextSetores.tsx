@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext, ReactNode } from 'react';
+import  { useState, createContext } from 'react';
 import { TSetores } from '../interfaces/allSetores';
 import { propsType } from '../interfaces/contextChildrenTypes';
 

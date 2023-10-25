@@ -18,13 +18,15 @@ const MostrarSetores = () => {
     const [setores, setSetores] = useState<TSetores[]>([])
     const primeiroRender = useRef(true);
     const pag = useContext(PaginasContext)
-
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         if (primeiroRender.current) {
             primeiroRender.current = false;
 
             const TodosSetores = async () => {
+                setLoading(false)
                 const dados: TSetores[] = await RetorneTodosOsSetores()
+
 
 
                 addSetores?.addSetores(dados)
@@ -33,13 +35,13 @@ const MostrarSetores = () => {
                 setSeta(novoSeta);
 
                 setSetores([...setores, ...dados])
+                setLoading(true)
             }
             void TodosSetores()
         }
 
     }, [])
-console.log (setores)
-    const HandleSeta = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+     const HandleSeta = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 
         const id = parseInt(e.currentTarget.id)
 
@@ -69,7 +71,7 @@ console.log (setores)
 
     }
 
-    const EditHandle = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, dados: TSetores) => {
+    const EditHandle = ( dados: TSetores) => {
 
 
         pag?.toggle("editar")
@@ -77,7 +79,7 @@ console.log (setores)
     }
 
 
-    const DeleHandle = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, dados: TSetores) => {
+    const DeleHandle = ( dados: TSetores) => {
         pag?.toggle("excluir")
         pag?.toggleDados(dados)
     }
@@ -87,7 +89,7 @@ console.log (setores)
 
             <div className="ListaDeSetores" >
                 <div className="VerSetores" >
-                    {setores.length ? setores.map((e, i) => (
+                    {loading ? setores.map((e, i) => (
                         <div key={i} className='se_tor' >
 
                             <div className="NomeSetor" id={String(i)} onClick={HandleSeta}>
@@ -108,12 +110,15 @@ console.log (setores)
                                     ))}
                                 </div>
                                 <div className="botoesControllerSetor">
-                                    <span onClick={i => EditHandle(i, e)}>Editar</span> <span onClick={i => DeleHandle(i, e)}>Excluir / Editar cargos</span> <span>trabalhadores</span>
+                                    <span onClick={_i => EditHandle(e)}>Editar</span> <span onClick={_i => DeleHandle(e)}>Excluir / Editar cargos</span> 
                                 </div>
 
                             </div>
                         </div>
-                    )) :  <LoadingForm/>  }
+                    )) : null}
+                    {loading && !setores.length ? <span>Adicione um setor!</span> : null}
+
+                    {!loading ? <LoadingForm /> : null}
 
                 </div>
             </div>

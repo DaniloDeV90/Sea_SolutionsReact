@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import  { useContext } from 'react'
 import SetorLogo from '../svgs/SetorLogo'
 import { PaginasContext } from '../../context/ContextPag'
 
